@@ -1,4 +1,4 @@
-#寻找数组的中心索引
+# 寻找数组的中心索引
 
 &emsp;Given an array of integers nums, write a method that returns the "pivot" index of this array.
 
