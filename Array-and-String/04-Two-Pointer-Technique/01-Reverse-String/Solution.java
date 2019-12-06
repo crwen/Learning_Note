@@ -1,5 +1,3 @@
-package array_and_string._04_two_pointer_technique;
-
 import java.util.Arrays;
 import java.util.Random;
 
