@@ -1,1 +1,1 @@
-蒟蒻的LeetCode Explore刷题记录
+learning note
