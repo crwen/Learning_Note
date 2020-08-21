@@ -2,7 +2,7 @@
 
 ### Buffer Pool 组成结构
 
-![](../.gitbook/assets/buffer_pool.png)
+![](../../.gitbook/assets/buffer_pool.png)
 
 * **控制块**：包括表空间编号、页号、缓存页在 `Buffer Pool` 中的地址、链表节点信息、锁信息等控制信息
 * **缓存页**：访问某个页的数据时，需要将数据页加载到 `Buffer Pool` 中，访问后不会立刻释放，所以叫缓存页

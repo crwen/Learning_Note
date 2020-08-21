@@ -10,7 +10,7 @@
 * `中止的(aborted)`：事务执行了一半而变为失败状态（回滚操作完毕时）
 * `提交的(committed)`：一个处在 `部分提交` 状态的事务将修改过的数据同步到磁盘上之后的状态。
 
-![](../.gitbook/assets/rka-jka1su3-3c4hfnjhn9.png)
+![](../../.gitbook/assets/rka-jka1su3-3c4hfnjhn9.png)
 
 ### 事务的特性
 
