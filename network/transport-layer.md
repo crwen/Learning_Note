@@ -94,7 +94,3 @@ TCP 主要通过四个算法来进行拥塞控制：慢启动、拥塞避免、�
   * 超时重传，ssthresh = cwnd / 2; cwnd = 1; 执行慢开始
   * 三次重复确认，ssthresh = crwnd / 2; cwnd = ssthresh；执行拥塞避免
 
-## 参考资料
-
- [黄健宏. Redis 设计与实现 \[M\]. 机械工业出版社，2014.](http://redisbook.com/index.html)
-
