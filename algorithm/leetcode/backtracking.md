@@ -64,6 +64,8 @@ class Solution {
 
 ## [39 组合总和](https://leetcode-cn.com/problems/combination-sum/)
 
+> 给定一个**无重复元素**的数组 `candidates` 和一个目标数 `target` ，找出 `candidates` 中所有可以使数字和为 `target` 的组合
+
 ```java
 class Solution {
     private List<List<Integer>> res = new ArrayList<>();
@@ -130,7 +132,7 @@ class Solution {
 > 思路
 >
 > 1. 递归，记忆化搜索
->    1. 迭代，dp
+> 2. 迭代，dp
 
 ```java
 class Solution {
