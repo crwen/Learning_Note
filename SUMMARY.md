@@ -8,6 +8,7 @@
     * [栈与队列](algorithm/leetcode/stack-queue.md)
     * [树](algorithm/leetcode/tree.md)
     * [递归与回溯](algorithm/leetcode/backtracking.md)
+    * [动态规划](algorithm/leetcode/dp.md)
   * [剑指 offer](algorithm/offer.md)
 * [计算机网络](network/README.md)
   * [网络层](network/network-layer.md)
