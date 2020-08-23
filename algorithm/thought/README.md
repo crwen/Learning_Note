@@ -2,7 +2,7 @@
 
 {% page-ref page="sort.md" %}
 
-{% page-ref page="shuang-zhi-zhen.md" %}
+{% page-ref page="two-pointer.md" %}
 
 {% page-ref page="merge.md" %}
 

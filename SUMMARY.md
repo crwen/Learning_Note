@@ -12,7 +12,7 @@
   * [剑指 offer](algorithm/offer.md)
   * [算法思想](algorithm/thought/README.md)
     * [排序](algorithm/thought/sort.md)
-    * [双指针](algorithm/thought/shuang-zhi-zhen.md)
+    * [双指针](algorithm/thought/two-pointer.md)
     * [分治](algorithm/thought/merge.md)
     * [搜索](algorithm/thought/search.md)
     * [动态规划](algorithm/thought/dp.md)
