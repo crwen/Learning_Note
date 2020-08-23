@@ -6,7 +6,7 @@
 
 {% page-ref page="concurrency/" %}
 
-{% page-ref page="framework.md" %}
+{% page-ref page="framework/" %}
 
 
 

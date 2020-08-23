@@ -38,6 +38,6 @@
     * [并发基础](java/concurrency/basic-content.md)
     * [并发工具类](java/concurrency/juc.md)
   * [JVM](java/jvm.md)
-  * [框架](java/framework.md)
-  * [Spring](java/spring.md)
+  * [框架](java/framework/README.md)
+    * [Spring](java/framework/spring.md)
 
