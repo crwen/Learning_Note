@@ -39,5 +39,7 @@
     * [并发工具类](java/concurrency/juc.md)
   * [JVM](java/jvm.md)
   * [框架](java/framework/README.md)
-    * [Spring](java/framework/spring.md)
+    * [Spring](java/framework/spring/README.md)
+      * [源码解析](java/framework/spring/yuan-ma-jie-xi/README.md)
+        * [Resource](java/framework/spring/yuan-ma-jie-xi/resource.md)
 
