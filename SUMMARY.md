@@ -42,4 +42,5 @@
     * [Spring](java/framework/spring/README.md)
       * [源码解析](java/framework/spring/yuan-ma-jie-xi/README.md)
         * [Resource](java/framework/spring/yuan-ma-jie-xi/resource.md)
+        * [ResourceLoader](java/framework/spring/yuan-ma-jie-xi/resourceloader.md)
 
