@@ -133,8 +133,10 @@ public interface ResourcePatternResolver extends ResourceLoader {
 ```java
 public Resource[] getResources(String locationPattern) throws IOException {
     Assert.notNull(locationPattern, "Location pattern must not be null");
+    // classpath:
     if (locationPattern.startsWith(CLASSPATH_ALL_URL_PREFIX)) {
         // a class path resource (multiple resources for same name possible)
+        // ant 风格
         if (getPathMatcher().isPattern(locationPattern.substring(CLASSPATH_ALL_URL_PREFIX.length()))) {
             // a class path resource pattern
             return findPathMatchingResources(locationPattern);
