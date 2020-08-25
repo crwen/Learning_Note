@@ -63,6 +63,56 @@ public Resource getResource(String location) {
 
 这里使用了策略模式。`Resource` 相当于策略接口，通过 `DefaultResourceLoader` 来决定返回哪个具体的实现类。
 
+* 若 location 以 "/" 开头，构造 `ClassPathContextResource`
+* 若 location 以 "classpath:"开头，构造 `ClassPathResource`
+* 否则构造 URL
+  * 资源为 `FileURL`，构造 `FileUrlResource`
+  * 否则构造 `UrlResource`
+  * 没有该资源抛出 `MalformedURLException` 异常，构造 `ClassPathContextResource`
+
+接下来看一个测试用例：
+
+```java
+public static void main(String[] args) {
+    ResourceLoader resourceLoader = new DefaultResourceLoader();
+    Resource resource = null;
+    String location = "";
+
+    location = "/spring/spring-config.xml";
+    resource = resourceLoader.getResource(location);
+    System.out.println(resource.getClass());
+
+    location = "classpath:spring/spring-config.xml";
+    resource = resourceLoader.getResource(location);
+    System.out.println(resource.getClass());
+
+    // 文件，构造 FileUrlResource
+    location = "file:/spring/spring-config.xml";
+    resource = resourceLoader.getResource(location);
+    System.out.println(resource.getClass());
+
+    // 不是文件，构造 UrlResource
+    location = "https://cn.bing.com/";
+    resource = resourceLoader.getResource(location);
+    System.out.println(resource.getClass());
+
+    // 抛出 MalformedURLException 构造 ClassPathContextResource
+    location = "spring/spring-config.xml";
+    resource = resourceLoader.getResource(location);
+    System.out.println(resource.getClass());
+}
+```
+
+执行结果如下：
+
+```java
+class org.springframework.core.io.DefaultResourceLoader$ClassPathContextResource
+class org.springframework.core.io.ClassPathResource
+class org.springframework.core.io.FileUrlResource
+class org.springframework.core.io.UrlResource
+class org.springframework.core.io.DefaultResourceLoader$ClassPathContextResource
+```
+
 ## ResourcePatternResolver
 
 `ResourceLoader` 只支持根据一个 location 返回一个实例，为了一次获取多个资源，Spring 提供了 `ResourcePatternResolver` 接口，同时还新增了一个协议前缀 "classpath\*:"。
@@ -108,6 +158,22 @@ public Resource[] getResources(String locationPattern) throws IOException {
             return new Resource[] {getResourceLoader().getResource(locationPattern)};
         }
     }
+}
+```
+
+由于 `AbstractApplication` 继承了 `DefaultResourceLoader` ，所以在将自己作为参数，构造了一个 `PathMatchingResourcePatternResolver`，然后通过调用 `getResources` 方法来获取资源。
+
+```java
+public AbstractApplicationContext() {
+    this.resourcePatternResolver = getResourcePatternResolver();
+}
+
+protected ResourcePatternResolver getResourcePatternResolver() {
+    return new PathMatchingResourcePatternResolver(this);
+}
+
+public Resource[] getResources(String locationPattern) throws IOException {
+    return this.resourcePatternResolver.getResources(locationPattern);
 }
 ```
 
