@@ -44,6 +44,7 @@
         * [资源定位](java/framework/spring/core/resource/README.md)
           * [Resource](java/framework/spring/core/resource/resource.md)
           * [ResourceLoader](java/framework/spring/core/resource/resourceloader.md)
+          * [BeanDefinitionReader](java/framework/spring/core/resource/beandefinitionreader.md)
         * [Bean 解析](java/framework/spring/core/bean-jie-xi.md)
       * [源码解析](java/framework/spring/yuan-ma-jie-xi.md)
 
