@@ -4,5 +4,7 @@
 
 {% page-ref page="resourceloader.md" %}
 
+{% page-ref page="beandefinitionreader.md" %}
+
 
 
