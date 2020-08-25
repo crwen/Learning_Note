@@ -41,10 +41,11 @@
   * [框架](java/framework/README.md)
     * [Spring](java/framework/spring/README.md)
       * [core](java/framework/spring/core/README.md)
-        * [资源定位](java/framework/spring/core/resource/README.md)
+        * [资源定位与解析](java/framework/spring/core/resource/README.md)
           * [Resource](java/framework/spring/core/resource/resource.md)
           * [ResourceLoader](java/framework/spring/core/resource/resourceloader.md)
           * [BeanDefinitionReader](java/framework/spring/core/resource/beandefinitionreader.md)
+        * [资源解析源码追踪](java/framework/spring/core/source-trace.md)
         * [Bean 解析](java/framework/spring/core/bean-jie-xi.md)
       * [源码解析](java/framework/spring/yuan-ma-jie-xi.md)
 

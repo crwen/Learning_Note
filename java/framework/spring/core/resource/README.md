@@ -1,4 +1,4 @@
-# 资源定位
+# 资源定位与解析
 
 {% page-ref page="resource.md" %}
 
