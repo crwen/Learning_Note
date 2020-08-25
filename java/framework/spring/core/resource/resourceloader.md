@@ -1,6 +1,6 @@
 # ResourceLoader
 
-Spring 将资源抽象为了 Resource，将资源的定义和资源的加载区分开了。但是为了访问不同的资源，必须使用相应的 `Resource` 实现类。而 `ResourceLoader` 提供了根据资源地址，构建相应资源实例。
+Spring 将资源抽象为了 Resource，但是为了访问不同的资源，必须使用相应的 `Resource` 实现类。而 `ResourceLoader` 提供了根据资源地址，构建相应资源实例的功能，将资源的定义和资源的加载区分开了。
 
 ![](../../../../../.gitbook/assets/resourceloader-ji-cheng-ti-xi-.png)
 
