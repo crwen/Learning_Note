@@ -1,6 +1,6 @@
 # BeanDefinitionReader
 
-`BeanDefinitionReader` 的作用是读取 Spring 配置文件，并利用 `ResourceLoader` 或 `ResourceResolver` 将其转换为 IOC 容器内部的数据结构 `BeanDefinition`。最后会借助 `BeanDefinitionRegistry` 将 `BeanDefinition` 注册到容器中。
+`BeanDefinitionReader` 的作用是读取 Spring 配置文件，并利用 `ResourceLoader` 或 `ResourceResolver` 将其转换为 IOC 容器内部的数据结构 `BeanDefinition`。最后会借助 `BeanDefinitionRegistry` 将 `BeanDefinition`注册到容器中。
 
 `BeanDefinitionReader` 的继承体系：
 
