@@ -37,6 +37,8 @@
   * [并发](java/concurrency/README.md)
     * [并发基础](java/concurrency/basic-content.md)
     * [并发工具类](java/concurrency/juc/README.md)
+      * [阻塞队列](java/concurrency/juc/blocking-queue.md)
+      * [LinkedBlockingQueue](java/concurrency/juc/linkedblockingqueue.md)
       * [ThreadPoolExecutor](java/concurrency/juc/threadpoolexecutor.md)
   * [JVM](java/jvm.md)
   * [框架](java/framework/README.md)
