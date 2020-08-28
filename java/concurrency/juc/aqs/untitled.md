@@ -294,16 +294,18 @@ public final void acquireShared(int arg) {
 
 ```java
 private void doAcquireShared(int arg) {
+    // 以共享模式加入到同步队列队尾
     final Node node = addWaiter(Node.SHARED); 
     boolean failed = true;
     try {
         boolean interrupted = false;
         for (;;) {
             final Node p = node.predecessor();
-            // 如果前驱节点就是头节点，就尝试获取锁，如果成功就把自己设置为头结点，唤醒头结点的后继节点
+            // 如果前驱节点就是头节点，就尝试获取锁，
             if (p == head) {
                 int r = tryAcquireShared(arg);
                 if (r >= 0) {
+                    //获取锁成功，把当前节点设置为头结点，并唤醒
                     setHeadAndPropagate(node, r);
                     p.next = null; // help GC
                     if (interrupted)
@@ -312,6 +314,8 @@ private void doAcquireShared(int arg) {
                     return;
                 }
             }
+            // 前驱节点不是 头结点
+            // 前驱节点是 头结点，但是当前节点获取锁失败
             // 判断是否应该自旋，如果前驱节点的状态为 SIGNAL，则当前节点就可以阻塞了
             if (shouldParkAfterFailedAcquire(p, node) &&
                 parkAndCheckInterrupt())
@@ -332,9 +336,59 @@ private void setHeadAndPropagate(Node node, int propagate) {
     if (propagate > 0 || h == null || h.waitStatus < 0 ||
         (h = head) == null || h.waitStatus < 0) {
         Node s = node.next;
-        // 如果后继节点也是共享模式，就唤醒
+        // 如果后继节点也是共享模式，就唤醒或者后继节点为空，唤醒后继节点
         if (s == null || s.isShared())
             doReleaseShared();
+    }
+}
+```
+
+获取共享锁的逻辑大致如下：
+
+1. 尝试获取共享锁，成功直接返回，否则走 2
+2. 封装为节点，加入同步队列尾部，走 3
+3. 如果前驱节点是头结点，再次尝试获取共享锁，成功走 4，否则走 5
+4. 将当前节点设置为头结点并唤醒，返回
+5. 将当前节点的前驱节点设置为 SIGNAL，然后阻塞
+
+`setHeaderAndPropagate` 这个方法主要做了两件事情：
+
+* 将当前节点设置为新的头结点，这就意味着前驱节点已经获取了共享锁
+* 唤醒后继节点
+
+### 释放共享锁
+
+```java
+public final boolean releaseShared(int arg) {
+    if (tryReleaseShared(arg)) {
+        doReleaseShared(); // 释放共享锁成功，唤醒后继节点
+        return true;
+    }
+    return false;
+}
+```
+
+```java
+private void doReleaseShared() {
+    for (;;) {
+        Node h = head;
+        if (h != null && h != tail) {
+            int ws = h.waitStatus;
+            if (ws == Node.SIGNAL) {
+                if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
+                    continue;            // loop to recheck cases
+                // 唤醒后继节点，唤醒后继续自旋逻辑，尝试获取锁
+                unparkSuccessor(h); 
+            }
+            // 如果后继节点暂时不需要唤醒，将状态设置为 PROPAGATE，方便传递给后继节点
+            else if (ws == 0 &&
+                     !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
+                continue;                // loop on failed CAS
+        }
+        // 1. 可能是 setHeadAndPropagate 中调用的该方法，head 发生改变，唤醒该节点
+        // 2. releaseShared 中调用，head 不会改变，直接退出循环，释放锁成功
+        if (h == head)                   // loop if head changed
+            break;
     }
 }
 ```
