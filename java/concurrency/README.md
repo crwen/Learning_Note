@@ -4,7 +4,7 @@
 
 {% page-ref page="juc/" %}
 
-{% page-ref page="../summary.md" %}
+{% page-ref page="summary.md" %}
 
 
 

@@ -43,7 +43,7 @@
       * [AQS](java/concurrency/juc/aqs/README.md)
         * [AbstractQueuedSynchronizer](java/concurrency/juc/aqs/untitled.md)
       * [ThreadPoolExecutor](java/concurrency/juc/threadpoolexecutor.md)
-  * [Summary](java/summary.md)
+    * [Summary](java/concurrency/summary.md)
   * [JVM](java/jvm/README.md)
     * [Summary](java/jvm/summary.md)
   * [框架](java/framework/README.md)
