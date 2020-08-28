@@ -2,7 +2,7 @@
 
 {% page-ref page="basic/" %}
 
-{% page-ref page="jvm.md" %}
+{% page-ref page="jvm/" %}
 
 {% page-ref page="concurrency/" %}
 
