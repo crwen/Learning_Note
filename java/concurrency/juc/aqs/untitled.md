@@ -385,8 +385,9 @@ private void doReleaseShared() {
                      !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
                 continue;                // loop on failed CAS
         }
-        // 1. 可能是 setHeadAndPropagate 中调用的该方法，head 发生改变，唤醒该节点
-        // 2. releaseShared 中调用，head 不会改变，直接退出循环，释放锁成功
+        // 1. setHeadAndPropagate 中调用的该方法，唤醒节点
+        // 2. releaseShared 中调用，释放锁成功
+        // 3. 头结点为空，或只有一个节点，直接退出循环
         if (h == head)                   // loop if head changed
             break;
     }
