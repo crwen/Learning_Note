@@ -4,6 +4,10 @@
 
 {% page-ref page="juc/" %}
 
+{% page-ref page="../summary.md" %}
+
+
+
 ## 参考资料
 
 * [《Java 并发编程的艺术》](https://book.douban.com/subject/26591326/)方腾飞
