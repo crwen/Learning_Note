@@ -217,6 +217,8 @@ private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
 2. 把当前节点加入同步队列队尾
 3. 自旋，将当前节点的前驱节点设置文 SIGNAL，然后阻塞自己
 
+![](../../../../.gitbook/assets/aqs-du-zhan-suo-huo-qu-.jpg)
+
 ### 释放排他锁 release
 
 排他锁的释放比较简单，从队头开始，找到它的下一个节点，如果下一个节点是空的，就会从队尾开始，一直找到状态节点不是取消的节点，然后释放该节点
