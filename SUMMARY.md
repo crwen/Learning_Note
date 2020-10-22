@@ -14,7 +14,7 @@
     * [排序](algorithm/thought/sort.md)
     * [双指针](algorithm/thought/two-pointer.md)
     * [分治](algorithm/thought/merge.md)
-    * [搜索](algorithm/thought/search.md)
+    * [回溯](algorithm/thought/backstrace.md)
     * [动态规划](algorithm/thought/dp.md)
 * [计算机网络](network/README.md)
   * [网络层](network/network-layer.md)
