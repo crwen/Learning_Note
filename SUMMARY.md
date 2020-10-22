@@ -56,4 +56,7 @@
           * [资源解析源码追踪](java/framework/spring/core/resource/source-trace.md)
         * [Bean 解析](java/framework/spring/core/bean-jie-xi.md)
       * [源码解析](java/framework/spring/yuan-ma-jie-xi.md)
+* [Spring Cloud](spring-cloud/README.md)
+  * [Nacos](spring-cloud/nacos/README.md)
+    * [Nacos服务注册](spring-cloud/nacos/register.md)
 
