@@ -234,3 +234,5 @@ public void putService(Service service) {
 
 可以看到注册逻辑也很简单，就是创建了一个 Service 实例，封装了服务信息后，直接放入到了一个 map 中。
 
+![](../../.gitbook/assets/nacos-fu-wu-fa-xian-.png)
+
