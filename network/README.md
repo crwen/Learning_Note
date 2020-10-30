@@ -2,7 +2,7 @@
 
 {% page-ref page="network-layer.md" %}
 
-{% page-ref page="transport-layer.md" %}
+{% page-ref page="transport-layer/" %}
 
 {% page-ref page="summary.md" %}
 
