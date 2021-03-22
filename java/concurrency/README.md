@@ -6,6 +6,8 @@
 
 {% page-ref page="summary.md" %}
 
+{% page-ref page="bing-fa-fu-xi.md" %}
+
 
 
 ## 参考资料
