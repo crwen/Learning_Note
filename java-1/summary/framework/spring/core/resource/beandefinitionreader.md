@@ -4,7 +4,7 @@
 
 `BeanDefinitionReader` 的继承体系：
 
-![](../../../../../.gitbook/assets/beandefinitionreader-ji-cheng-ti-xi-.png)
+![](../../../../../../.gitbook/assets/beandefinitionreader-ji-cheng-ti-xi-.png)
 
 `BeanDefinitionReader` 定义了一系列对加载资源的方法。
 
