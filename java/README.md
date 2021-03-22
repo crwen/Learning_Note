@@ -2,11 +2,11 @@
 
 {% page-ref page="basic/" %}
 
-{% page-ref page="jvm.md" %}
+{% page-ref page="jvm/" %}
 
 {% page-ref page="concurrency/" %}
 
-{% page-ref page="summary/framework/" %}
+{% page-ref page="framework/" %}
 
 
 

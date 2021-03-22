@@ -4,13 +4,13 @@
 
 Resource 继承体系如下：
 
-![](../../../../../../.gitbook/assets/resource-ji-cheng-ti-xi-.png)
+![](../../../../../.gitbook/assets/resource-ji-cheng-ti-xi-.png)
 
 Resource 接口是 Spring 访问物理资源的抽象，其本身并不提供任何资源访问的实现，具体的访问由该接口的实现类来完成，每个实现类都代表一种资源的访问策略。
 
 `Resource` 只提供了相应的读操作
 
-![](../../../../../../.gitbook/assets/resourcemethod.png)
+![](../../../../../.gitbook/assets/resourcemethod.png)
 
 ## EncodedResource
 

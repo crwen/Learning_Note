@@ -6,7 +6,7 @@
 
 {% page-ref page="database/" %}
 
-{% page-ref page="java-1/java.md" %}
+{% page-ref page="java/" %}
 
 
 

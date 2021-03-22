@@ -6,5 +6,7 @@
 
 {% page-ref page="redis/" %}
 
+{% page-ref page="shu-ju-ku-fu-xi.md" %}
+
 
 
